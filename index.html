@@ -12,28 +12,86 @@
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
-  <header>
+  <!-- ===== HEADER ===== -->
+  <header id="home">
     <h1>Hip-Hop & Pop Vibes</h1>
     <p>Your Source for the Latest in Music Culture</p>
   </header>
 
+  <!-- ===== NAVBAR ===== -->
   <nav>
+    <a href="#home">Home</a>
     <a href="#artists">Artists</a>
     <a href="#albums">Albums</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- ✅ Single Featured Artists section powered by React -->
-  <section id="artists">
+  <!-- ===== HOME SECTION ===== -->
+  <section id="home" class="section">
+    <h2 class="section-title">Welcome</h2>
+    <p>
+      Explore the world of Hip-Hop and Pop music. Discover the latest artists,
+      iconic albums, and connect with us for updates on your favorite stars.
+    </p>
+  </section>
+
+  <!-- ===== ARTISTS SECTION (React) ===== -->
+  <section id="artists" class="section">
     <h2 class="section-title">Featured Artists</h2>
     <div id="artist-root"></div>
   </section>
 
+  <!-- ===== ALBUMS SECTION ===== -->
+  <section id="albums" class="section">
+    <h2 class="section-title">Top Albums</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="certifiedloverboy.webp" alt="Certified Lover Boy" />
+        <div class="card-content">
+          <h3>Certified Lover Boy</h3>
+          <p>Drake’s 2021 chart-topping album blending rap and R&B vibes.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="offset.webp" alt="Offset Solo Album" />
+        <div class="card-content">
+          <h3>Father of 4</h3>
+          <p>Offset’s solo album exploring personal struggles and triumphs.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="fredagain.jpeg" alt="Fred Again.. Album" />
+        <div class="card-content">
+          <h3>Actual Life</h3>
+          <p>Fred Again..’s emotional storytelling through electronic beats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact Us</h2>
+    <form>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
   <footer>
     <p>&copy; 2025 Hip-Hop & Pop Vibes. All rights reserved.</p>
   </footer>
 
-  <!-- React Script -->
+  <!-- ===== REACT SCRIPT ===== -->
   <script type="text/babel">
     // ✅ ES6 Features
     const siteName = "Hip-Hop & Pop Vibes"; // const
@@ -82,4 +140,3 @@
   </script>
 </body>
 </html>
-
