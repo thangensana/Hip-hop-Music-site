@@ -23,23 +23,9 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Old static artists section (keep as backup / optional) -->
+  <!-- ✅ Single Featured Artists section powered by React -->
   <section id="artists">
     <h2 class="section-title">Featured Artists</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="drake.webp" alt="Drake" />
-        <div class="card-content">
-          <h3>Drake</h3>
-          <p>Canadian rapper, singer, and songwriter known for hits like "One Dance" and "God's Plan".</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- React powered artists section -->
-  <section id="react-artists">
-    <h2 class="section-title">Featured Artists (React)</h2>
     <div id="artist-root"></div>
   </section>
 
@@ -58,7 +44,7 @@
 
     // Array + Spread Operator
     const hipHop = ["Drake", "Offset"];
-    const pop = ["Fred Again..", "The Weeknd"];
+    const pop = ["Fred Again.."];
     const allArtists = [...hipHop, ...pop];
     console.log("All Artists:", allArtists);
 
@@ -78,8 +64,7 @@
       const artists = [
         { name: "Drake", img: "drake.webp", desc: "Canadian rapper blending hip-hop and R&B." },
         { name: "Offset", img: "offset.webp", desc: "American rapper, member of Migos." },
-        { name: "Fred Again..", img: "fredagain.jpeg", desc: "UK producer mixing emotional beats." },
-        { name: "Tendai", img: "tendaysfred.webp", desc: "Rising artist in alt-pop and hip-hop fusion." }
+        { name: "Fred Again..", img: "fredagain.jpeg", desc: "UK producer mixing emotional beats." }
       ];
 
       // Destructuring + map
@@ -97,3 +82,4 @@
   </script>
 </body>
 </html>
+
