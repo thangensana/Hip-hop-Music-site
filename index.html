@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hip-Hop & Pop Vibes</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- React & Babel CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
-
   <header>
     <h1>Hip-Hop & Pop Vibes</h1>
     <p>Your Source for the Latest in Music Culture</p>
@@ -19,79 +23,77 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Old static artists section (keep as backup / optional) -->
   <section id="artists">
     <h2 class="section-title">Featured Artists</h2>
     <div class="grid">
-
-      <!-- Drake -->
       <div class="card">
         <img src="drake.webp" alt="Drake" />
         <div class="card-content">
           <h3>Drake</h3>
-          <p>Canadian rapper, singer, and songwriter known for blending hip-hop and R&B with global hits like “One Dance” and “God’s Plan”.</p>
+          <p>Canadian rapper, singer, and songwriter known for hits like "One Dance" and "God's Plan".</p>
         </div>
       </div>
-
-      <!-- Offset -->
-      <div class="card">
-        <img src="offset.webp" alt="Offset" />
-        <div class="card-content">
-          <h3>Offset</h3>
-          <p>Member of the Migos trio, Offset is known for his distinct trap style and solo projects like “Set It Off”.</p>
-        </div>
-      </div>
-
-      <!-- Fred again.. -->
-      <div class="card">
-        <img src="fredagainn.jpeg" alt="Fred again.." />
-        <div class="card-content">
-          <h3>Fred again..</h3>
-          <p>British producer and artist celebrated for blending emotional storytelling with electronic beats in albums like “Actual Life”.</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <section id="albums">
-    <h2 class="section-title">Top Albums</h2>
-    <div class="grid">
-
-      <div class="card">
-        <img src="certifiedloverboy.webp" alt="Certified Lover Boy" />
-        <div class="card-content">
-          <h3>Certified Lover Boy</h3>
-          <p>Drake’s moody, introspective album featuring hits like “Way 2 Sexy” and “Fair Trade”.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="Professional.webp" alt="Offset" alt="Set It Off" />
-        <div class="card-content">
-          <h3>Set It Off</h3>
-          <p>Offset’s latest solo album blending high-energy trap with personal lyrics.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="tendaysfredd.webp" alt="Actual Life 3" />
-        <div class="card-content">
-          <h3>Actual Life 3</h3>
-          <p>Fred again..’s third album, mixing heartfelt samples with powerful electronic beats.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p style="text-align: center;">For collaborations, reviews, or feedback, email us at <strong>hiphopvibes@email.com</strong></p>
+  <!-- React powered artists section -->
+  <section id="react-artists">
+    <h2 class="section-title">Featured Artists (React)</h2>
+    <div id="artist-root"></div>
   </section>
 
   <footer>
     <p>&copy; 2025 Hip-Hop & Pop Vibes. All rights reserved.</p>
   </footer>
 
+  <!-- React Script -->
+  <script type="text/babel">
+    // ✅ ES6 Features
+    const siteName = "Hip-Hop & Pop Vibes"; // const
+    let visitorCount = 0; // let
+
+    const greetUser = (name) => Welcome to ${siteName}, ${name}!; // arrow + template literal
+    console.log(greetUser("Sara"));
+
+    // Array + Spread Operator
+    const hipHop = ["Drake", "Offset"];
+    const pop = ["Fred Again..", "The Weeknd"];
+    const allArtists = [...hipHop, ...pop];
+    console.log("All Artists:", allArtists);
+
+    // React Component
+    const ArtistCard = ({ name, desc, img }) => (
+      <div className="card" style={{border:"1px solid #333", margin:"10px", padding:"10px", borderRadius:"8px"}}>
+        <img src={img} alt={name} style={{width:"150px", borderRadius:"8px"}} />
+        <div className="card-content">
+          <h3>{name}</h3>
+          <p>{desc}</p>
+        </div>
+      </div>
+    );
+
+    // Main App Component
+    const App = () => {
+      const artists = [
+        { name: "Drake", img: "drake.webp", desc: "Canadian rapper blending hip-hop and R&B." },
+        { name: "Offset", img: "offset.webp", desc: "American rapper, member of Migos." },
+        { name: "Fred Again..", img: "fredagain.jpeg", desc: "UK producer mixing emotional beats." },
+        { name: "Tendai", img: "tendaysfred.webp", desc: "Rising artist in alt-pop and hip-hop fusion." }
+      ];
+
+      // Destructuring + map
+      return (
+        <div className="grid">
+          {artists.map((artist, index) => (
+            <ArtistCard key={index} {...artist} />
+          ))}
+        </div>
+      );
+    };
+
+    // Render React App
+    ReactDOM.createRoot(document.getElementById("artist-root")).render(<App />);
+  </script>
 </body>
 </html>
