@@ -109,7 +109,7 @@
     // React Component
     const ArtistCard = ({ name, desc, img }) => (
       <div className="card" style={{border:"1px solid #333", margin:"10px", padding:"10px", borderRadius:"8px"}}>
-        <img src={img} alt={name} style={{width:"150px", borderRadius:"8px"}} />
+        <img src={img} alt={name} style={{width:"100%", height:"auto", borderRadius:"8px"}} />
         <div className="card-content">
           <h3>{name}</h3>
           <p>{desc}</p>
@@ -140,6 +140,7 @@
   </script>
 </body>
 </html>
+
 
 
 
