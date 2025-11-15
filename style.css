@@ -5,6 +5,7 @@ body {
   color: #fff;
 }
 
+/* Header */
 header {
   background-color: #1f1f1f;
   padding: 20px;
@@ -16,6 +17,7 @@ header h1 {
   font-size: 2.5em;
 }
 
+/* Navbar */
 nav {
   background: #2c2c2c;
   display: flex;
@@ -34,6 +36,7 @@ nav a:hover {
   color: #e91e63;
 }
 
+/* Section container */
 section {
   padding: 40px 20px;
   max-width: 1200px;
@@ -47,6 +50,7 @@ section {
   padding-left: 15px;
 }
 
+/* Responsive Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -54,62 +58,35 @@ section {
 }
 
 /* ============================= */
-/*   FIXED CARD SIZE (UNIFIED)   */
+/*   FLEXIBLE / NON-FIXED CARDS  */
 /* ============================= */
-/* ===== UNIFORM CARD SIZE ===== */
+
 .card {
   background-color: #1f1f1f;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s ease;
-  width: 260px;      /* Same width for every card */
-  height: 400px;     /* Same height for every card */
-  margin: auto;
   display: flex;
   flex-direction: column;
 }
 
-/* ===== UNIFORM IMAGE SIZE ===== */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Flexible image (keeps card natural size) */
 .card img {
   width: 100%;
-  height: 240px;      /* FORCE SAME HEIGHT */
-  object-fit: cover;  /* Auto crops to perfect square/rectangle */
+  height: 200px;     /* Good default */
+  object-fit: cover;
   border-radius: 10px;
 }
 
-/* ===== CONTENT FIX ===== */
+/* Content adapts naturally */
 .card-content {
   padding: 15px;
-  flex: 1;           /* Prevents stretching */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-content h3 {
-  margin: 0;
-  color: #e91e63;
-  font-size: 1.1em;
-}
-
-.card-content p {
-  margin-top: 10px;
-  font-size: 0.9em;
-  line-height: 1.4;
-}
-
-
-/* MAKE IMAGES SAME SIZE */
-.card img {
-  width: 100%;
-  height: 230px;       /* Uniform image height */
-  object-fit: cover;   /* Crops nicely to keep size consistent */
-  border-radius: 10px;
-}
-
-.card-content {
-  padding: 15px;
-  height: 130px;       /* Prevent text stretching card size */
 }
 
 .card-content h3 {
@@ -123,6 +100,7 @@ section {
   margin: 0;
 }
 
+/* Footer */
 footer {
   background-color: #1f1f1f;
   color: #bbb;
@@ -131,7 +109,7 @@ footer {
   font-size: 0.9em;
 }
 
-/* Link wrapper for albums */
+/* Whole card clickable */
 .album-link {
   text-decoration: none;
   color: inherit;
