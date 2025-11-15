@@ -49,28 +49,38 @@ section {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
+/* ============================= */
+/*   FIXED CARD SIZE (UNIFIED)   */
+/* ============================= */
 .card {
   background-color: #1f1f1f;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s ease;
+  width: 260px;       /* Fixed album/artist card width */
+  height: 380px;      /* Fixed card height */
+  margin: auto;       /* Centers the cards inside grid */
 }
 
 .card:hover {
   transform: scale(1.03);
 }
 
+/* MAKE IMAGES SAME SIZE */
 .card img {
   width: 100%;
-  height: auto;
+  height: 230px;       /* Uniform image height */
+  object-fit: cover;   /* Crops nicely to keep size consistent */
+  border-radius: 10px;
 }
 
 .card-content {
   padding: 15px;
+  height: 130px;       /* Prevent text stretching card size */
 }
 
 .card-content h3 {
@@ -81,6 +91,7 @@ section {
 .card-content p {
   font-size: 0.9em;
   line-height: 1.4;
+  margin: 0;
 }
 
 footer {
@@ -90,13 +101,16 @@ footer {
   padding: 20px;
   font-size: 0.9em;
 }
+
+/* Link wrapper for albums */
 .album-link {
-  text-decoration: none;     /* Remove blue link styling */
-  color: inherit;            /* Keep your normal text colors */
+  text-decoration: none;
+  color: inherit;
   display: block;
 }
 
 .album-link:hover {
-  opacity: 0.9;              /* Little hover effect */
+  opacity: 0.9;
 }
+
 
