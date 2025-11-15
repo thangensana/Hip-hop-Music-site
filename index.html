@@ -162,29 +162,50 @@
 
     // Main App Component 
     const App = () => {
-      const artists = [
-        { name: "Drake", img: "drake.webp", desc: "Canadian rapper blending hip-hop and R&B." },
-        { name: "SoFaygo", img: "SoFaygo.webp" , desc: "American rapper and singer from Georgia." },
-        { name: "Fred Again..", img: "fredagainn.jpeg", desc: "UK producer mixing emotional beats." }
-        { name: "Don Toliver", img: "DonToliver.webp", desc: "American rapper and singer from Texas (born 1994)." }
-        { name: "Lil Uzi Vert", img: "lilUzi.jpg", desc: "American rapper and singer and songwriter Known for their eclectic fashion style and genre-blending music."}
-      ];
+  const artists = [
+    { 
+      name: "Drake", 
+      img: "drake.webp", 
+      desc: "Canadian rapper blending hip-hop and R&B." 
+    },
+    { 
+      name: "SoFaygo", 
+      img: "SoFaygo.webp", 
+      desc: "American rapper and singer from Georgia." 
+    },
+    { 
+      name: "Fred Again..", 
+      img: "fredagainn.jpeg", 
+      desc: "UK producer mixing emotional beats." 
+    },
+    { 
+      name: "Don Toliver", 
+      img: "Dontoliver.webp", 
+      desc: "American rapper and singer from Texas (born 1994)." 
+    },
+    { 
+      name: "Lil Uzi Vert", 
+      img: "LilUzi.gif", 
+      desc: "American rapper and singer known for fashion and melodic trap." 
+    }
+  ];
 
-      // Destructuring + map
-      return (
-        <div className="grid">
-          {artists.map((artist, index) => (
-            <ArtistCard key={index} {...artist} />
-          ))}
-        </div>
-      );
-    };
+  return (
+    <div className="grid">
+      {artists.map((artist, index) => (
+        <ArtistCard key={index} {...artist} />
+      ))}
+    </div>
+  );
+};
+
 
     // Render React App
     ReactDOM.createRoot(document.getElementById("artist-root")).render(<App />);
   </script>
 </body>
 </html>
+
 
 
 
