@@ -90,12 +90,3 @@ footer {
   padding: 20px;
   font-size: 0.9em;
 }
-.album-link {
-  text-decoration: none;     /* Remove blue link styling */
-  color: inherit;            /* Keep your normal text colors */
-  display: block;
-}
-
-.album-link:hover {
-  opacity: 0.9;              /* Little hover effect */
-}
