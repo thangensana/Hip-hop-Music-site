@@ -1,0 +1,1 @@
+body{margin:0;background:#111;color:#fff;font-family:Manrope,sans-serif}.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.card{background:#1c1c1e;padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,.08)}.artist-img{width:100%;border-radius:10px}
