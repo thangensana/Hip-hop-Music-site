@@ -1,18 +1,20 @@
-import React from "react";
 import artists from "./data/artists";
 import ArtistCard from "./components/ArtistCard";
+import Header from "./components/Header";
 
-const App = () => {
+function App() {
   return (
-    <div style={{ padding: "30px" }}>
-      <h1 style={{ textAlign: "center" }}>Hip-Hop & Pop Vibes</h1>
+    <>
+      <Header />
       <div className="grid">
-        {artists.map((artist, i) => (
-          <ArtistCard key={i} {...artist} />
+        {artists.map((artist, index) => (
+          <ArtistCard key={index} {...artist} />
         ))}
       </div>
-    </div>
+    </>
   );
-};
+}
+
+export default App;
 
 
