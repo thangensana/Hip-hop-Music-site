@@ -112,7 +112,7 @@ const artistsData = [
   },
   {
     name: "Twenty One Pilots",
-    img: "twentyonepilots.webp",
+    img: "21p.webp",
     desc: "Genre-blending alternative duo.",
     albums: [
       { title: "Blurryface", year: 2015, img: "twentyonepilots.webp" }
@@ -160,7 +160,7 @@ const artistsData = [
   },
   {
     name: "Central Cee",
-    img: "centralcee.webp",
+    img: "central.webp",
     desc: "UK drill rapper.",
     albums: [
       { title: "23", year: 2022, img: "centralcee.webp" }
@@ -198,18 +198,15 @@ const AlbumSection = () => (
     {artistsData.map((artist, i) => (
       <div key={i}>
         <h3 className="album-title">{artist.name}</h3>
-        <div className="grid">
+         <div className="album-grid">
           {artist.albums.map((album, j) => (
-            <div className="card" key={j}>
-              <img src={album.img} />
-              <h4>{album.title}</h4>
-              <p>{album.year}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    ))}
-  </div>
+    <div className="album-card" key={j}>
+      <img src={album.img} alt={album.title} />
+      <h4>{album.title}</h4>
+      <p>{album.year}</p>
+    </div>
+  ))}
+</div>
 );
 
 // RENDER
@@ -225,4 +222,5 @@ ReactDOM.createRoot(document.getElementById("album-root")).render(<AlbumSection 
 
 </body>
 </html>
+
 
