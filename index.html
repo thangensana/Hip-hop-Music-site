@@ -66,41 +66,81 @@
       color: #ff2e88;
     }
 
+    /* ===== ALBUM SECTION ===== */
+
     .album-title {
-      margin-top: 40px;
+      margin-top: 50px;
       color: #00e0ff;
+      font-size: 22px;
     }
 
     .album-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 25px;
     }
 
     .album-card {
       background: #1a1a1a;
-      padding: 10px;
-      border-radius: 10px;
+      padding: 20px;
+      border-radius: 14px;
       text-align: center;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .album-card:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 20px rgba(0, 224, 255, 0.6);
     }
 
     .album-card img {
       width: 100%;
-      max-width: 140px;
-      height: 140px;
+      max-width: 220px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 12px;
+      margin-bottom: 12px;
     }
 
     .album-card h4 {
-      font-size: 14px;
-      margin: 5px 0;
+      font-size: 16px;
+      margin: 6px 0;
     }
 
     .album-card p {
-      font-size: 12px;
+      font-size: 14px;
       color: #aaa;
+    }
+
+    /* 🔒 ENSURE NO VISIBLE LINKS */
+    .album-card * {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 🎧 Spotify hint (hover only) */
+    .album-card::after {
+      content: "▶ Open on Spotify";
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #1db954;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .album-card:hover::after {
+      opacity: 1;
+    }
+
+    /* 📱 Mobile */
+    @media (max-width: 768px) {
+      .album-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -138,115 +178,34 @@ const artistsData = [
     name: "Drake",
     img: "drake.webp",
     desc: "Canadian rapper blending hip-hop and R&B.",
-    albums: [{ title: "Certified Lover Boy", year: 2021, img: "certifiedloverboy.webp" }]
+    albums: [{
+      title: "Certified Lover Boy",
+      year: 2021,
+      img: "certifiedloverboy.webp",
+      spotify: "https://open.spotify.com/album/3SpBlxme9WbeQdI9kx7KAV"
+    }]
   },
   {
     name: "Kanye West",
     img: "Kanye.webp",
     desc: "Visionary rapper and producer.",
-    albums: [{ title: "Graduation", year: 2007, img: "graduation.webp" }]
+    albums: [{
+      title: "Graduation",
+      year: 2007,
+      img: "graduation.webp",
+      spotify: "https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3"
+    }]
   },
   {
     name: "Lil Uzi Vert",
     img: "lilUzi.jpg",
     desc: "Melodic trap superstar.",
-    albums: [{ title: "Eternal Atake", year: 2020, img: "LilUzi.gif" }]
-  },
-  {
-    name: "Don Toliver",
-    img: "DonToliver.webp",
-    desc: "Trap & R&B artist from Houston.",
-    albums: [{ title: "Life of a Don", year: 2021, img: "Dontoliver.jpg" }]
-  },
-  {
-    name: "SoFaygo",
-    img: "SoFaygo.webp",
-    desc: "Rising rage-trap artist.",
-    albums: [{ title: "Pink Heartz", year: 2022, img: "Pinkheartz.gif" }]
-  },
-  {
-    name: "Fred again..",
-    img: "fredagainn.jpeg",
-    desc: "UK producer blending emotional electronic music.",
-    albums: [{ title: "Actual Life", year: 2021, img: "tendaysfredd.webp" }]
-  },
-  {
-    name: "EsDeeKid",
-    img: "esdeekid.webp",
-    desc: "UK drill rapper.",
-    albums: [{ title: "Block Baby", year: 2021, img: "esdeeAlbum.webp" }]
-  },
-  {
-    name: "Twenty One Pilots",
-    img: "21p.webp",
-    desc: "Genre-blending alternative duo.",
-    albums: [{ title: "Blurryface", year: 2015, img: "twentyonepilots.webp" }]
-  },
-  {
-    name: "5 Seconds of Summer",
-    img: "5sos.webp",
-    desc: "Australian pop-rock band.",
-    albums: [{ title: "CALM", year: 2020, img: "5sos.webp" }]
-  },
-  {
-    name: "NAV",
-    img: "Nav.webp",
-    desc: "Canadian melodic trap artist.",
-    albums: [{ title: "Bad Habits", year: 2019, img: "Nav.webp" }]
-  },
-  {
-    name: "The Kid LAROI",
-    img: "Laroi.webp",
-    desc: "Australian pop-rap star.",
-    albums: [{ title: "F*CK LOVE", year: 2020, img: "Laroi.webp" }]
-  },
-  {
-    name: "Justin Bieber",
-    img: "Justin.webp",
-    desc: "Global pop icon.",
-    albums: [{ title: "Justice", year: 2021, img: "Justin.webp" }]
-  },
-  {
-    name: "Linkin Park",
-    img: "linkin.webp",
-    desc: "Rock-rap crossover legends.",
-    albums: [{ title: "Hybrid Theory", year: 2000, img: "linkin.webp" }]
-  },
-  {
-    name: "Central Cee",
-    img: "central.webp",
-    desc: "UK drill rapper.",
-    albums: [{ title: "23", year: 2022, img: "central-cee.webp" }]
-  },
-  {
-    name: "Lifafa",
-    img: "Lifafa.webp",
-    desc: "Indian indie electronic artist.",
-    albums: [{ title: "Jaago", year: 2020, img: "Lifafa.webp" }]
-  },
-  {
-    name: "Hanumankind",
-    img: "Hanuman.webp",
-    desc: "Indian hip-hop artist.",
-    albums: [{ title: "Surface Level", year: 2023, img: "Hanuman.webp" }]
-  },
-  {
-    name: "Playboi Carti",
-    img: "playboi.webp",
-    desc: "Trap & rage rap pioneer.",
-    albums: [{ title: "I AM MUSIC", year: 2025, img: "PlayboiC.webp" }]
-  },
-  {
-    name: "A$AP Rocky",
-    img: "asap.webp",
-    desc: "American rapper and fashion icon.",
-    albums: [{ title: "DON'T BE DUMB", year: 2026, img: "asapalbum.webp" }]
-  },
-  {
-    name: "fakemink",
-    img: "Fake.webp",
-    desc: "Member of London's underground hip-hop scene.",
-    albums: [{ title: "Underground Sound", year: 2026, img: "fakemink.webp" }]
+    albums: [{
+      title: "Eternal Atake",
+      year: 2020,
+      img: "LilUzi.gif",
+      spotify: "https://open.spotify.com/album/7IyoGB8J31fvQDwGtHAq9m"
+    }]
   }
 ];
 
@@ -265,7 +224,13 @@ const AlbumSection = () => (
         <h3 className="album-title">{artist.name}</h3>
         <div className="album-grid">
           {artist.albums.map((album, j) => (
-            <div className="album-card" key={j}>
+            <div
+              key={j}
+              className="album-card"
+              onClick={() => window.open(album.spotify, "_blank")}
+              role="button"
+              aria-label="Open album on Spotify"
+            >
               <img src={album.img} alt={album.title} />
               <h4>{album.title}</h4>
               <p>{album.year}</p>
@@ -289,4 +254,3 @@ ReactDOM.createRoot(document.getElementById("album-root")).render(<AlbumSection 
 
 </body>
 </html>
-
