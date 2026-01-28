@@ -66,7 +66,7 @@
       color: #ff2e88;
     }
 
-    /* ===== ALBUM SECTION ===== */
+    /* ===== ALBUMS ===== */
 
     .album-title {
       margin-top: 50px;
@@ -115,13 +115,13 @@
       color: #aaa;
     }
 
-    /* 🔒 ENSURE NO VISIBLE LINKS */
+    /* No visible links */
     .album-card * {
       text-decoration: none;
       color: inherit;
     }
 
-    /* 🎧 Spotify hint (hover only) */
+    /* Spotify hint */
     .album-card::after {
       content: "▶ Open on Spotify";
       display: block;
@@ -136,7 +136,6 @@
       opacity: 1;
     }
 
-    /* 📱 Mobile */
     @media (max-width: 768px) {
       .album-grid {
         grid-template-columns: 1fr;
@@ -206,6 +205,61 @@ const artistsData = [
       img: "LilUzi.gif",
       spotify: "https://open.spotify.com/album/7IyoGB8J31fvQDwGtHAq9m"
     }]
+  },
+  {
+    name: "Don Toliver",
+    img: "DonToliver.webp",
+    desc: "Trap & R&B artist from Houston.",
+    albums: [{
+      title: "Life of a Don",
+      year: 2021,
+      img: "Dontoliver.jpg",
+      spotify: "https://open.spotify.com/album/2QzEJ0y4pWzvE2Oa0Z8KcZ"
+    }]
+  },
+  {
+    name: "SoFaygo",
+    img: "SoFaygo.webp",
+    desc: "Rising rage-trap artist.",
+    albums: [{
+      title: "Pink Heartz",
+      year: 2022,
+      img: "Pinkheartz.gif",
+      spotify: "https://open.spotify.com/album/6gQKAYfRj3ZfW6E0PZ8LZx"
+    }]
+  },
+  {
+    name: "Playboi Carti",
+    img: "playboi.webp",
+    desc: "Trap & rage rap pioneer.",
+    albums: [{
+      title: "Whole Lotta Red",
+      year: 2020,
+      img: "PlayboiC.webp",
+      spotify: "https://open.spotify.com/album/2QRedhP5RmKJiJ1i8b1JcC"
+    }]
+  },
+  {
+    name: "A$AP Rocky",
+    img: "asap.webp",
+    desc: "American rapper and fashion icon.",
+    albums: [{
+      title: "LONG.LIVE.A$AP",
+      year: 2013,
+      img: "asapalbum.webp",
+      spotify: "https://open.spotify.com/album/6rzMufuu8sLkIizM4q9c7J"
+    }]
+  },
+  {
+    name: "Justin Bieber",
+    img: "Justin.webp",
+    desc: "Global pop icon.",
+    albums: [{
+      title: "Justice",
+      year: 2021,
+      img: "JustinB.webp",
+      spotify: "https://open.spotify.com/album/5dGWwsZ9iB2Xc3UKR0gif2"
+    }]
   }
 ];
 
@@ -228,8 +282,6 @@ const AlbumSection = () => (
               key={j}
               className="album-card"
               onClick={() => window.open(album.spotify, "_blank")}
-              role="button"
-              aria-label="Open album on Spotify"
             >
               <img src={album.img} alt={album.title} />
               <h4>{album.title}</h4>
