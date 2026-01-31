@@ -59,8 +59,10 @@
 
     .card img {
       width: 100%;
+      height: 280px;          /* FIXED HEIGHT */
+      object-fit: cover;     /* crops evenly */
       border-radius: 8px;
-    }
+}
 
     .artist-name {
       color: #ff2e88;
@@ -260,7 +262,52 @@ const artistsData = [
       img: "JustinB.webp",
       spotify: "https://open.spotify.com/album/5dGWwsZ9iB2Xc3UKR0gif2"
     }]
-  }
+  },
+   {
+    name: "Fakemink",
+    img: "Fake.webp",
+    desc: "A member of London's underground hip-hop scene, his releases include the viral "Easter Pink" ",
+    albums: [{
+      title: "The Boy who cried Terrified",
+      year: 2026,
+      img: "fakemink.webp",
+      spotify: "https://open.spotify.com/album/2hDITFU9UORQlTBKz6vj3o?si=2lY8xYxFQ8uILxpOLH591w"
+    }]
+},
+  {
+    name: "TWENTYONE PILOTS",
+    img: "21p.webp",
+    desc: "American musical duo from Columbus, Ohio",
+    albums: [{
+      title: "blurryface",
+      year: 2015,
+      img: "blurry.webp",
+      spotify: "https://open.spotify.com/album/3cQO7jp5S9qLBoIVtbkSM1?si=Ms9sIFhCTuCcMFBET-dg4g"
+    }]
+},
+    {
+    name: "Central Cee",
+    img: "central.webp",
+    desc: " British rapper from Shepherd's Bush, London. Regarded as a leading figure in UK rap",
+    albums: [{
+      title: "CAN'T RUSH GREATNESS",
+      year: 2025,
+      img: "central-cee.webp",
+      spotify: "https://open.spotify.com/album/1pnm9zBlblhTRlE46ItLzU?si=5afa979895bd4902"
+    }]
+},
+    {
+    name: "Linkin Park",
+    img: "linkin.webp",
+    desc: "Linkin Park is an American rock band formed in Agoura Hills, California, in 1996.",
+    albums: [{
+      title: "One More Light",
+      year: 2025,
+      img: "onemore.webp",
+      spotify: "https://open.spotify.com/album/5Eevxp2BCbWq25ZdiXRwYd?si=iS3iobc9R0KgQRgXPxCdoQ"
+    }]
+},
+  
 ];
 
 const ArtistCard = ({ name, img, desc }) => (
@@ -306,3 +353,4 @@ ReactDOM.createRoot(document.getElementById("album-root")).render(<AlbumSection 
 
 </body>
 </html>
+
