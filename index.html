@@ -59,16 +59,14 @@
 
     .card img {
       width: 100%;
-      height: 280px;          /* FIXED HEIGHT */
-      object-fit: cover;     /* crops evenly */
+      height: 280px;
+      object-fit: cover;
       border-radius: 8px;
-}
+    }
 
     .artist-name {
       color: #ff2e88;
     }
-
-    /* ===== ALBUMS ===== */
 
     .album-title {
       margin-top: 50px;
@@ -107,23 +105,11 @@
       margin-bottom: 12px;
     }
 
-    .album-card h4 {
-      font-size: 16px;
-      margin: 6px 0;
-    }
-
-    .album-card p {
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    /* No visible links */
     .album-card * {
       text-decoration: none;
       color: inherit;
     }
 
-    /* Spotify hint */
     .album-card::after {
       content: "▶ Open on Spotify";
       display: block;
@@ -209,39 +195,6 @@ const artistsData = [
     }]
   },
   {
-    name: "Don Toliver",
-    img: "DonToliver.webp",
-    desc: "Trap & R&B artist from Houston.",
-    albums: [{
-      title: "Life of a Don",
-      year: 2021,
-      img: "Dontoliver.jpg",
-      spotify: "https://open.spotify.com/album/2QzEJ0y4pWzvE2Oa0Z8KcZ"
-    }]
-  },
-  {
-    name: "SoFaygo",
-    img: "SoFaygo.webp",
-    desc: "Rising rage-trap artist.",
-    albums: [{
-      title: "Pink Heartz",
-      year: 2022,
-      img: "Pinkheartz.gif",
-      spotify: "https://open.spotify.com/album/6gQKAYfRj3ZfW6E0PZ8LZx"
-    }]
-  },
-  {
-    name: "Playboi Carti",
-    img: "playboi.webp",
-    desc: "Trap & rage rap pioneer.",
-    albums: [{
-      title: "Whole Lotta Red",
-      year: 2020,
-      img: "PlayboiC.webp",
-      spotify: "https://open.spotify.com/album/2QRedhP5RmKJiJ1i8b1JcC"
-    }]
-  },
-  {
     name: "A$AP Rocky",
     img: "asap.webp",
     desc: "American rapper and fashion icon.",
@@ -249,17 +202,7 @@ const artistsData = [
       title: "Don't Be Dumb",
       year: 2026,
       img: "asapalbum.webp",
-      spotify: "https://open.spotify.com/album/4itKk52E9ZCdWUQcFAkud9?si=krOqK3qiTdeawopAUZ9IUg
-  },
-  {
-    name: "Justin Bieber",
-    img: "Justin.webp",
-    desc: "Global pop icon.",
-    albums: [{
-      title: "Justice",
-      year: 2021,
-      img: "JustinB.webp",
-      spotify: "https://open.spotify.com/album/5dGWwsZ9iB2Xc3UKR0gif2"
+      spotify: "https://open.spotify.com/album/4itKk52E9ZCdWUQcFAkud9"
     }]
   },
   {
@@ -287,7 +230,7 @@ const artistsData = [
   {
     name: "Lifafa",
     img: "Lifafa.webp",
-    desc: "Indian indie electronic artist blending synth-pop and emotion.",
+    desc: "Indian indie electronic artist.",
     albums: [{
       title: "Jaago",
       year: 2020,
@@ -298,7 +241,7 @@ const artistsData = [
   {
     name: "5 Seconds of Summer",
     img: "5sos.webp",
-    desc: "Australian pop-rock band formed in Sydney.",
+    desc: "Australian pop-rock band.",
     albums: [{
       title: "CALM",
       year: 2020,
@@ -307,9 +250,6 @@ const artistsData = [
     }]
   }
 ];
-
-</script>
-
 
 const ArtistCard = ({ name, img, desc }) => (
   <div className="card">
@@ -354,6 +294,3 @@ ReactDOM.createRoot(document.getElementById("album-root")).render(<AlbumSection 
 
 </body>
 </html>
-
-
-
