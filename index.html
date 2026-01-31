@@ -76,9 +76,14 @@
 
     .album-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
       margin-top: 25px;
+      justify-items: center;
+    }
+
+    .album-card h4{
+      color: #ff2e88;
     }
 
     .album-card {
@@ -359,4 +364,5 @@ ReactDOM.createRoot(document.getElementById("album-root")).render(<AlbumSection 
 
 </body>
 </html>
+
 
